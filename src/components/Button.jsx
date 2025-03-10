@@ -35,7 +35,7 @@ export default function ButtonElement({ inputRef, tipCalc, setTipCalc, setTotalC
                 <ButtonTags percentage="15%" />
                 <ButtonTags percentage="25%" />
                 <ButtonTags percentage="50%" />
-                <input type="text" id="custom" placeholder="Custom" name="custom" className="bg-lightgrayish-500 p-2 h-[40px] w-[90px] text-xl font-semibold outline-[0px] rounded" onChange={BtnTask}/>
+                <input type="text" id="custom" placeholder="Custom" name="custom" className="bg-lightgrayish-500 text-darkCyan-500 p-2 h-[40px] w-[90px] text-xl font-semibold outline-[0px] rounded" onChange={BtnTask}/>
             </section>
             <div>
                     <label htmlFor='people' className="text-grayishColor-500"> Number of People</label>
