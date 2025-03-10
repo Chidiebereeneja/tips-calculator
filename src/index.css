@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cyanColor-500: hsl(172, 67%, 45%);
+  --color-Lightgrayish-500: hsl(185, 41%, 84%);
+  --color-darkCyan-500: hsl(183, 100%, 15%);
+  --color-lightgrayish-500: hsl(189, 41%, 97%);
+  --color-whiteColor-500: hsl(0, 0%, 100%);
+  --color-grayishColor-500: hsl(184, 14%, 56%);
+}
+
+:root {
+  font-family: "Space Mono", serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.input-container {
+  @apply flex items-center h-[35px] bg-lightgrayish-500 p-2
+}
+
+.input-style {
+  @apply rounded bg-lightgrayish-500 w-full h-[35px] outline-[0px] text-right pr-2 text-[20px] font-semibold text-darkCyan-500
+}
