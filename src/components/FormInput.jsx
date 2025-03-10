@@ -47,7 +47,7 @@ export default function FormInputs() {
     }
 
 
-  return  <form className="w-2xl h-[360px] bg-whiteColor-500 grid grid-cols-1 md:grid-cols-2 p-4 md:p-7 gap-8 rounded-xl">
+  return  <form className="w-2xl h-fit md:h-[360px] bg-whiteColor-500 grid grid-cols-1 md:grid-cols-2 p-4 md:p-7 gap-8 rounded-xl">
        <div>
             <div>
                 <label htmlFor='bill' className="text-grayishColor-500" for="bill">Bill</label> 

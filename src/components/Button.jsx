@@ -22,7 +22,7 @@ export default function ButtonElement({ inputRef, tipCalc, setTipCalc, setTotalC
 
     function ButtonTags({percentage}) {
     
-        return <button className="bg-darkCyan-500 text-whiteColor-500 h-[40px] w-fit md:w-[90px] px-7 text-xl font-semibold rounded hover:bg-cyanColor-500 hover:text-teal-800 cursor-pointer transition-all" onClick={BtnTask}>{percentage}</button>
+        return <button className="bg-darkCyan-500 text-whiteColor-500 h-[40px] w-[90px] px-7 text-xl font-semibold rounded hover:bg-cyanColor-500 hover:text-teal-800 cursor-pointer transition-all" onClick={BtnTask}>{percentage}</button>
     }
     
 
