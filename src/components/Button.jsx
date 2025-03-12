@@ -1,15 +1,19 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { MdOutlinePersonOutline } from "react-icons/md";
 
 
 export default function ButtonElement({ inputRef, tipCalc, setTipCalc, setTotalCalc}) {
     const peopleInput = useRef(null)
+    const [activeButton, setActiveButton] = useState(false)
 
-    const BtnTask = (e) => {
+    const BtnTask = (e, percentage) => {
         e.preventDefault();
+        setActiveButton(percentage)
         const inputVal = +inputRef.current.value;
         const targetVal = e.target.tagName === "BUTTON" ? +e.target.textContent.replace("%", "").trim() : +e.target.value;
         const resultPer = (targetVal / 100)
+
+        // setIsActive(!isActive);
         setTipCalc(inputVal * resultPer); 
     }
 
@@ -18,11 +22,14 @@ export default function ButtonElement({ inputRef, tipCalc, setTipCalc, setTotalC
         const result = inputVal * tipCalc
         setTotalCalc(result);
     }
+
+
     
 
-    function ButtonTags({percentage}) {
-    
-        return <button className="bg-darkCyan-500 text-whiteColor-500 h-[40px] w-[90px] px-7 text-xl font-semibold rounded hover:bg-cyanColor-500 hover:text-teal-800 cursor-pointer transition-all" onClick={BtnTask}>{percentage}</button>
+    function ButtonTags({percentage, onClick, isActive}) {
+        const styleState = isActive ? 'active' : 'notActive';
+
+        return <button className={styleState} onClick={onClick}>{percentage}</button>
     }
     
 
@@ -30,11 +37,11 @@ export default function ButtonElement({ inputRef, tipCalc, setTipCalc, setTotalC
         <div className="flex flex-col gap-4">
             <h2 className="text-grayishColor-500">Select Tip %</h2>
             <section className="grid grid-cols-3 gap-4 ">
-                <ButtonTags percentage="5%" />
-                <ButtonTags percentage="10%" />
-                <ButtonTags percentage="15%" />
-                <ButtonTags percentage="25%" />
-                <ButtonTags percentage="50%" />
+
+                {["5%", "10%", "15%", "25%", "50%"].map((percentage) => {
+                return <ButtonTags percentage={percentage} onClick={(e) => BtnTask(e, percentage)} isActive={activeButton === percentage} />
+                })}
+
                 <input type="text" id="custom" placeholder="Custom" name="custom" className="bg-lightgrayish-500 text-darkCyan-500 p-2 h-[40px] w-[90px] text-xl font-semibold outline-[0px] rounded" onChange={BtnTask}/>
             </section>
             <div>
