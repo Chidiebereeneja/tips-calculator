@@ -13,7 +13,6 @@ export default function ButtonElement({ inputRef, tipCalc, setTipCalc, setTotalC
         const targetVal = e.target.tagName === "BUTTON" ? +e.target.textContent.replace("%", "").trim() : +e.target.value;
         const resultPer = (targetVal / 100)
 
-        // setIsActive(!isActive);
         setTipCalc(inputVal * resultPer); 
     }
 
